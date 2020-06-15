@@ -95,6 +95,15 @@ public class FizzBuzzTest {
         //then
         assertEquals(result, "Whizz");
     }
+    @Test
+    public void should_get_word_BuzzWhizz_when_given_140() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(140);
+        //then
+        assertEquals(result, "BuzzWhizz");
+    }
 
     @Test
     public void should_get_word_FizzBuzzWhizz_when_given_105() {
@@ -140,6 +149,33 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         //when
         String result = fizzBuzz.getResult(75);
+        //then
+        assertEquals(result, "Fizz");
+    }
+    @Test
+    public void should_get_word_Fizz_when_given_105() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(105);
+        //then
+        assertEquals(result, "BuzzWhizz");
+    }
+    @Test
+    public void should_get_word_Fizz_when_given_153() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(153);
+        //then
+        assertEquals(result, "");
+    }
+    @Test
+    public void should_get_word_Fizz_when_given_753() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(753);
         //then
         assertEquals(result, "Fizz");
     }
