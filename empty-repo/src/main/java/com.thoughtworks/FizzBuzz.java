@@ -1,27 +1,21 @@
 package com.thoughtworks;
 
 public class FizzBuzz {
-    public boolean isDevidedBy3(int number){
-        if (number % 3 ==0){return true;}
-        return false;
 
-    }
-    public boolean isDevidedBy5(int number){
-        if (number % 5 ==0){return true;}
-        return false;
-    }
-
-    public boolean isDevidedBy15(int number){
-        if (number % 15 ==0){return true;}
+    public boolean isDevidedByDivided(int number,int divided){
+        if (number % divided ==0){return true;}
         return false;
     }
     public String getResult(int number){
-        if (isDevidedBy15(number)){
+        int FizzNumber = 3;
+        int BuzzNumber = 5;
+        int FizzBuzzNumber = 15;
+        if (isDevidedByDivided(number,FizzBuzzNumber)){
             return "FizzBuzz";
         }
-        else if (isDevidedBy3(number)){
+        else if (isDevidedByDivided(number,FizzNumber)){
             return "Fizz";
-        } else if (isDevidedBy5(number)) {
+        } else if (isDevidedByDivided(number,BuzzNumber)) {
         return "Buzz";
         }
 
