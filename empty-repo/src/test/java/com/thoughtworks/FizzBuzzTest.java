@@ -43,6 +43,16 @@ public class FizzBuzzTest {
         //when
         String result = fizzBuzz.getResult(15);
         //then
+        assertEquals(result, "Buzz");
+    }
+
+    @Test
+    public void should_get_word_FizzBuzz_when_given_60() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(60);
+        //then
         assertEquals(result, "FizzBuzz");
     }
 
@@ -92,6 +102,15 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         //when
         String result = fizzBuzz.getResult(105);
+        //then
+        assertEquals(result, "BuzzWhizz");
+    }
+    @Test
+    public void should_get_word_FizzBuzzWhizz_when_given_210() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(210);
         //then
         assertEquals(result, "FizzBuzzWhizz");
     }
