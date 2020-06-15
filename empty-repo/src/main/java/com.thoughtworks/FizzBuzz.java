@@ -13,7 +13,11 @@ public class FizzBuzz {
         int WhizzNumber = 7;
         int FizzWhizzNumber = 21;
         int BuzzWhizzNumber = 35;
+        int FizzBuzzWhizzNumber = 105;
 
+        if (isDevidedByDivided(number,FizzBuzzWhizzNumber)){
+            return "FizzBuzzWhizz";
+        }
         if (isDevidedByDivided(number,BuzzWhizzNumber)){
             return "BuzzWhizz";
         }
