@@ -14,7 +14,7 @@ public class FizzBuzz {
         }
         return false;
     }
-    String getResult(int number){
+    public String getResult(int number){
         int FizzNumber = 3;
         int BuzzNumber = 5;
         int WhizzNumber = 7;
@@ -29,11 +29,11 @@ public class FizzBuzz {
              resultString = resultString + "Whizz";
         }
        if (resultString == "" && !isIncluded(number,3)){
-           return String.valueOf(number);
+           resultString =  String.valueOf(number);
        }else if (isIncluded(number,3)){
-           return "Fizz";
-       }else {
-           return resultString;
+           resultString = "Fizz";
        }
+           return resultString;
+
     }
 }
