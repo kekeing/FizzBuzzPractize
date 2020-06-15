@@ -93,7 +93,7 @@ public class FizzBuzzTest {
         //when
         String result = fizzBuzz.getResult(70);
         //then
-        assertEquals(result, "BuzzWhizz");
+        assertEquals(result, "Whizz");
     }
 
     @Test
