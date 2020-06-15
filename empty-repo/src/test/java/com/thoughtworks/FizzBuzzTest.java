@@ -102,7 +102,7 @@ public class FizzBuzzTest {
         String result = fizzBuzz.getResult(70);
 
         //then
-        assertEquals(result, "BuzzWhizzt");
+        assertEquals(result, "BuzzWhizz");
     }
     @Test
     public void should_get_word_FizzBuzzWhizz_when_given_105() {
