@@ -18,13 +18,13 @@ public class FizzBuzz {
         if (isDevidedByDivided(number,FizzBuzzWhizzNumber)){
             return "FizzBuzzWhizz";
         }
-        if (isDevidedByDivided(number,BuzzWhizzNumber)){
+        else if (isDevidedByDivided(number,BuzzWhizzNumber)){
             return "BuzzWhizz";
         }
-        if (isDevidedByDivided(number,FizzWhizzNumber)){
+        else if (isDevidedByDivided(number,FizzWhizzNumber)){
             return "FizzWhizz";
         }
-        if (isDevidedByDivided(number,FizzBuzzNumber)){
+        else if (isDevidedByDivided(number,FizzBuzzNumber)){
             return "FizzBuzz";
         }
         else if (isDevidedByDivided(number,FizzNumber)){
