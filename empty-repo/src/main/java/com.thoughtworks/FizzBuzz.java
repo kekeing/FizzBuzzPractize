@@ -2,8 +2,8 @@ package com.thoughtworks;
 
 public class FizzBuzz {
 
-    public boolean isDevidedByDivided(int number,int divided){
-        if (number % divided ==0){return true;}
+    public boolean isDevidedByDivided(int number,int divisor){
+        if (number % divisor ==0){return true;}
         return false;
     }
     public String getResult(int number){
