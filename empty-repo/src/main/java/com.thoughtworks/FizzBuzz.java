@@ -10,6 +10,8 @@ public class FizzBuzz {
         int FizzNumber = 3;
         int BuzzNumber = 5;
         int FizzBuzzNumber = 15;
+        int WhizzNumber = 7;
+
         if (isDevidedByDivided(number,FizzBuzzNumber)){
             return "FizzBuzz";
         }
@@ -17,6 +19,9 @@ public class FizzBuzz {
             return "Fizz";
         } else if (isDevidedByDivided(number,BuzzNumber)) {
         return "Buzz";
+        }
+        else if (isDevidedByDivided(number,WhizzNumber)) {
+            return "Whizz";
         }
 
         return String.valueOf(number);

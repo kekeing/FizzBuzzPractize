@@ -55,4 +55,16 @@ public class FizzBuzzTest {
         //then
         assertEquals(result, "FizzBuzz");
     }
+    @Test
+    public void should_get_word_Whizz_when_given_7() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+
+        //when
+        String result = fizzBuzz.getResult(7);
+
+        //then
+        assertEquals(result, "Whizz");
+    }
 }
