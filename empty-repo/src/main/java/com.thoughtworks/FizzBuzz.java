@@ -6,6 +6,14 @@ public class FizzBuzz {
         if (number % divisor ==0){return true;}
         return false;
     }
+    public boolean isIncluded(int number,int includedNumber){
+        String stringNumber = String.valueOf(number);
+        String stringIncludedNumer = String.valueOf(includedNumber);
+        if (stringNumber.contains(stringIncludedNumer)){
+            return true;
+        }
+        return false;
+    }
     public String getResult(int number){
         int FizzNumber = 3;
         int BuzzNumber = 5;
@@ -20,8 +28,10 @@ public class FizzBuzz {
          if (isDividedByDivided(number,WhizzNumber)) {
              resultString = resultString + "Whizz";
         }
-       if (resultString == ""){
+       if (resultString == "" && !isIncluded(number,3)){
            return String.valueOf(number);
+       }else if (isIncluded(number,3)){
+           return "Fizz";
        }else {
            return resultString;
        }
