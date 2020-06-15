@@ -39,7 +39,7 @@ public class FizzBuzz {
         if (isDividedByDivided(number, WhizzNumber)) {
             resultString = resultString + "Whizz";
         }
-        if (resultString == "" && !isIncluded(number, includedFizzNumber)) {
+        if (resultString == "" && (!isIncluded(number, includedFizzNumber) || isIncluded(number,includedBuzzNumber))) {
             resultString = String.valueOf(number);
         } else if (isIncluded(number, includedFizzNumber) && !isIncluded(number,includedBuzzNumber)) {
             resultString = "Fizz";

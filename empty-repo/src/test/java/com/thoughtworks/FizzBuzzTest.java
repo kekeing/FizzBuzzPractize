@@ -168,7 +168,7 @@ public class FizzBuzzTest {
         //when
         String result = fizzBuzz.getResult(153);
         //then
-        assertEquals(result, "");
+        assertEquals(result, "153");
     }
     @Test
     public void should_get_word_Fizz_when_given_753() {
