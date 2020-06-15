@@ -21,17 +21,20 @@ public class FizzBuzz {
     public String getResult(int number) {
         int includedFizzNumber = 3;
         int includedBuzzNumber = 5;
+        int includedWhizzNumber = 7;
         int FizzNumber = 3;
         int BuzzNumber = 5;
         int WhizzNumber = 7;
         String resultString = "";
-        if (!isIncluded(number,includedBuzzNumber)) {
+        if (!isIncluded(number,includedBuzzNumber) || isIncluded(number,includedWhizzNumber)) {
             if (isDividedByDivided(number, FizzNumber)) {
                 resultString = resultString + "Fizz";
             }
         }
-        if (isDividedByDivided(number, BuzzNumber)) {
-            resultString = resultString + "Buzz";
+        if (!isIncluded(number,includedWhizzNumber)) {
+            if (isDividedByDivided(number, BuzzNumber)) {
+                resultString = resultString + "Buzz";
+            }
         }
         if (isDividedByDivided(number, WhizzNumber)) {
             resultString = resultString + "Whizz";
