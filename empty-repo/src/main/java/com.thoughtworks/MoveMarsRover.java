@@ -1,11 +1,11 @@
 package com.thoughtworks;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MoveMarsRover {
     public static int border = 5;
-    public static int negativeBorder = -5;
     public MarsRover moveMarsRoverAccordOrders(MarsRover marsRover, List<Character> orders){
         MarsRover testMarsRover = new MarsRover();
         for (Character character : orders)
@@ -36,11 +36,7 @@ public class MoveMarsRover {
     }
 
     private void resultMarsRoverAccordCharacterLorR(MarsRover marsRover,Character character){
-        List<Character> list = new ArrayList<>();
-        list.add('N');
-        list.add('E');
-        list.add('S');
-        list.add('W');
+        List<Character> list = Arrays.asList('N','E','S','W');
         int index = list.indexOf(marsRover.getDirection());
         int resultIndex = 0;
         if (character == 'R'){ resultIndex = (index + 1) % 4;}
