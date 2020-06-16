@@ -3,6 +3,7 @@ package com.thoughtworks;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -164,13 +165,14 @@ public class MoveMarsRoverTest {
         MarsRover marsRover = new MarsRover(-5,-5,'S');
         MarsRover expectMarsRover = new MarsRover(-5,-5,'S');
         MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list1 = Arrays.asList('M','R','R');
         List<Character> list= new ArrayList<>();
         list.add('M');
         list.add('R');
         list.add('R');
 
         //when
-        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list1);
         //then
         assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
         assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
