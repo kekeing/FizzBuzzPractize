@@ -126,5 +126,21 @@ public class MoveMarsRoverTest {
         assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
         assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
     }
+    @Test
+    public void should_get_MarsRover_xIs0_yIs1_directionIsN_when_given_MarsRover_xIs5_yIs5_directionIsN_listIsM() {
+        //given
+        MarsRover marsRover = new MarsRover(5,5,'N');
+        MarsRover expectMarsRover = new MarsRover(5,5,'N');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list= new ArrayList<>();
+        list.add('M');
+
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
 
 }

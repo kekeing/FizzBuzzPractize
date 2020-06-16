@@ -4,10 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MoveMarsRover {
+    public static int border = 5;
     public MarsRover moveMarsRoverAccordOrders(MarsRover marsRover, List<Character> orders){
         for (Character character : orders)
         {
               moveMarsRoverAccordOrder(marsRover,character);
+              if (Math.abs(marsRover.getCoordinateX()) > border){
+                  marsRover.setCoordinateX(marsRover.getCoordinateX() - 1);
+                  return marsRover;
+              }
+            if (Math.abs(marsRover.getCoordinateY()) > border){
+                marsRover.setCoordinateY(marsRover.getCoordinateY() - 1);
+                return marsRover;
+            }
+
         }
         return marsRover;
     }
