@@ -178,5 +178,44 @@ public class MoveMarsRoverTest {
         assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
         assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
     }
+    @Test
+    public void should_get_MarsRover_xIs_negative5_yIs_negative5_directionIsN_when_given_MarsRover_xIs_negative5_yIs_negative5_directionIsS_listIsRR() {
+        //given
+        MarsRover marsRover = new MarsRover(-5,-5,'S');
+        MarsRover expectMarsRover = new MarsRover(-5,-5,'N');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list1 = Arrays.asList('R','R');
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list1);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
 
+    @Test
+    public void should_get_MarsRover_xIs_negative5_yIs_negative5_directionIsN_when_given_MarsRover_xIs_negative5_yIs_negative5_directionIsS_listIsRRRRMMRRLLRR() {
+        //given
+        MarsRover marsRover = new MarsRover(-5,-5,'S');
+        MarsRover expectMarsRover = new MarsRover(-5,-5,'S');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list1 = Arrays.asList('R','R','R','R','M','M','R','R','L','L','R','R');
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list1);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
+    @Test(expected = RuntimeException.class)
+    public void should_get_MarsRover_xIs_negative5_yIs_negative5_directionIsN_when_given_MarsRover_xIs_negative5_yIs_negative5_directionIsS_listIsW() {
+        //given
+        MarsRover marsRover = new MarsRover(-5,-5,'S');
+        MarsRover expectMarsRover = new MarsRover(-5,-5,'S');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list1 = Arrays.asList('W');
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list1);
+
+    }
 }

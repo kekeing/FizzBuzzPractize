@@ -35,11 +35,13 @@ public class MoveMarsRover {
         if (character == 'M'){
          resultMarsRoverAccordCharacterM(marsRover);
         }
-        if (character == 'L'){
+        else if (character == 'L'){
             resultMarsRoverAccordCharacterL(marsRover);
         }
-        if (character == 'R'){
+        else if (character == 'R'){
              resultMarsRoverAccordCharacterR(marsRover);
+        }else{
+        throw new RuntimeException("XXX");
         }
     }
 
