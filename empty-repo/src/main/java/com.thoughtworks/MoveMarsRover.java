@@ -7,26 +7,16 @@ public class MoveMarsRover {
     public static int border = 5;
     public static int negativeBorder = -5;
     public MarsRover moveMarsRoverAccordOrders(MarsRover marsRover, List<Character> orders){
+        MarsRover testMarsRover = new MarsRover();
         for (Character character : orders)
         {
+            testMarsRover.setCoordinateY(marsRover.getCoordinateY());
+            testMarsRover.setCoordinateX(marsRover.getCoordinateX());
+            testMarsRover.setDirection(marsRover.getDirection());
+            moveMarsRoverAccordOrder(testMarsRover,character);
+            if (Math.abs(testMarsRover.getCoordinateX()) > border || Math.abs(testMarsRover.getCoordinateY()) > border)
+            {return marsRover;}
               moveMarsRoverAccordOrder(marsRover,character);
-              if (marsRover.getCoordinateX() > border){
-                  marsRover.setCoordinateX(marsRover.getCoordinateX() - 1);
-                  return marsRover;
-              }
-            if (marsRover.getCoordinateY() > border){
-                marsRover.setCoordinateY(marsRover.getCoordinateY() - 1);
-                return marsRover;
-            }
-            if (marsRover.getCoordinateX() < negativeBorder){
-                marsRover.setCoordinateX(marsRover.getCoordinateX() + 1);
-                return marsRover;
-            }
-            if (marsRover.getCoordinateY() < negativeBorder){
-                marsRover.setCoordinateY(marsRover.getCoordinateY() + 1);
-                return marsRover;
-            }
-
         }
         return marsRover;
     }
