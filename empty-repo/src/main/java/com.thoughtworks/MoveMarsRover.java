@@ -5,77 +5,65 @@ import java.util.List;
 
 public class MoveMarsRover {
     public MarsRover moveMarsRoverAccordOrders(MarsRover marsRover, List<Character> orders){
-        MarsRover resultMarsRover = new MarsRover();
         for (Character character : orders)
         {
-             resultMarsRover = moveMarsRoverAccordOrder(marsRover,character);
+              moveMarsRoverAccordOrder(marsRover,character);
         }
-        return resultMarsRover;
+        return marsRover;
     }
 
-    private MarsRover moveMarsRoverAccordOrder(MarsRover marsRover, Character character) {
-        MarsRover resultMarsRoverAccordCharacter = new MarsRover();
+    private void moveMarsRoverAccordOrder(MarsRover marsRover, Character character) {
         if (character == 'M'){
-        resultMarsRoverAccordCharacter = resultMarsRoverAccordCharacterM(marsRover);
+         resultMarsRoverAccordCharacterM(marsRover);
         }
         if (character == 'L'){
-            resultMarsRoverAccordCharacter = resultMarsRoverAccordCharacterL(marsRover);
+            resultMarsRoverAccordCharacterL(marsRover);
         }
         if (character == 'R'){
-            resultMarsRoverAccordCharacter = resultMarsRoverAccordCharacterR(marsRover);
+             resultMarsRoverAccordCharacterR(marsRover);
         }
-        return  resultMarsRoverAccordCharacter;
     }
 
-    private MarsRover resultMarsRoverAccordCharacterL(MarsRover marsRover) {
-        MarsRover resultMarsRoverAccordCharacter = new MarsRover();
+    private void resultMarsRoverAccordCharacterLorR(MarsRover marsRover,Character character){
         List<Character> list = new ArrayList<>();
         list.add('N');
         list.add('E');
         list.add('S');
         list.add('W');
         int index = list.indexOf(marsRover.getDirection());
-        int resultIndex = list.get((index + 4 - 1) % 4);
-        resultMarsRoverAccordCharacter.setDirection(list.get(resultIndex));
-        resultMarsRoverAccordCharacter.setCoordinateY(marsRover.getCoordinateY());
-        resultMarsRoverAccordCharacter.setCoordinateX(marsRover.getCoordinateX());
-        return resultMarsRoverAccordCharacter;
-    }
-    private MarsRover resultMarsRoverAccordCharacterR(MarsRover marsRover) {
-        MarsRover resultMarsRoverAccordCharacter = new MarsRover();
-        List<Character> list = new ArrayList<>();
-        list.add('N');
-        list.add('E');
-        list.add('S');
-        list.add('W');
-        int index = list.indexOf(marsRover.getDirection());
-        int resultIndex = list.get((index + 1) % 4);
-        resultMarsRoverAccordCharacter.setDirection(list.get(resultIndex));
-        resultMarsRoverAccordCharacter.setCoordinateY(marsRover.getCoordinateY());
-        resultMarsRoverAccordCharacter.setCoordinateX(marsRover.getCoordinateX());
-        return resultMarsRoverAccordCharacter;
+        int resultIndex = 0;
+        if (character == 'R'){ resultIndex = (index + 1) % 4;}
+        if (character == 'L'){ resultIndex = (index + 3) % 4;}
+        marsRover.setDirection(list.get(resultIndex));
+        marsRover.setCoordinateY(marsRover.getCoordinateY());
+        marsRover.setCoordinateX(marsRover.getCoordinateX());
     }
 
-    private MarsRover resultMarsRoverAccordCharacterM(MarsRover marsRover) {
-        MarsRover resultMarsRoverAccordCharacter = new MarsRover();
-        if ("N".equals(marsRover.getDirection())){
-            resultMarsRoverAccordCharacter.setCoordinateY(marsRover.getCoordinateY() + 1);
-            resultMarsRoverAccordCharacter.setCoordinateX(marsRover.getCoordinateX());
-            resultMarsRoverAccordCharacter.setDirection(marsRover.getDirection());
+    private void resultMarsRoverAccordCharacterL(MarsRover marsRover) {
+        resultMarsRoverAccordCharacterLorR(marsRover,'L');
+    }
+    private void resultMarsRoverAccordCharacterR(MarsRover marsRover) {
+         resultMarsRoverAccordCharacterLorR(marsRover,'R');
+    }
+
+    private void resultMarsRoverAccordCharacterM(MarsRover marsRover) {
+        if (marsRover.getDirection() == 'N'){
+            marsRover.setCoordinateY(marsRover.getCoordinateY() + 1);
+            marsRover.setCoordinateX(marsRover.getCoordinateX());
+            marsRover.setDirection(marsRover.getDirection());
         }
-        if ("W".equals(marsRover.getDirection())){
-            resultMarsRoverAccordCharacter.setCoordinateX(marsRover.getCoordinateX() - 1);
-            resultMarsRoverAccordCharacter.setCoordinateY(marsRover.getCoordinateY());
-            resultMarsRoverAccordCharacter.setDirection(marsRover.getDirection());
+        if (marsRover.getDirection() == 'W'){
+            marsRover.setCoordinateX(marsRover.getCoordinateX() - 1);
+            marsRover.setCoordinateY(marsRover.getCoordinateY());
+            marsRover.setDirection(marsRover.getDirection());
         }
-        if ("S".equals(marsRover.getDirection())){
-            resultMarsRoverAccordCharacter.setCoordinateY(marsRover.getCoordinateY() - 1);
-            resultMarsRoverAccordCharacter.setCoordinateX(marsRover.getCoordinateX());
-            resultMarsRoverAccordCharacter.setDirection(marsRover.getDirection());        }
-        if ("E".equals(marsRover.getDirection())){
-            resultMarsRoverAccordCharacter.setCoordinateX(marsRover.getCoordinateX() + 1);
-            resultMarsRoverAccordCharacter.setCoordinateY(marsRover.getCoordinateY());
-            resultMarsRoverAccordCharacter.setDirection(marsRover.getDirection());        }
-        return resultMarsRoverAccordCharacter;
+        if (marsRover.getDirection() == 'S'){
+            marsRover.setCoordinateY(marsRover.getCoordinateY() - 1);
+            marsRover.setCoordinateX(marsRover.getCoordinateX());
+            marsRover.setDirection(marsRover.getDirection());        }
+        if (marsRover.getDirection() == 'E'){
+            marsRover.setCoordinateX(marsRover.getCoordinateX() + 1);
+            marsRover.setCoordinateY(marsRover.getCoordinateY());
+            marsRover.setDirection(marsRover.getDirection());        }
     }
 }

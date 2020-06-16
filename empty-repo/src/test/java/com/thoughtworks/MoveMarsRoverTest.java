@@ -18,11 +18,11 @@ public class MoveMarsRoverTest {
         list.add('M');
 
         //when
-        MarsRover resultMarsRover = moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
         //then
-        assertEquals(resultMarsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
-        assertEquals(resultMarsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
-        assertEquals(resultMarsRover.getDirection(),expectMarsRover.getDirection());
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
     }
 
     @Test
@@ -32,14 +32,14 @@ public class MoveMarsRoverTest {
         MarsRover expectMarsRover = new MarsRover(0,0,'W');
         MoveMarsRover moveMarsRover = new MoveMarsRover();
         List<Character> list= new ArrayList<>();
-        list.add('W');
+        list.add('L');
 
         //when
-        MarsRover resultMarsRover = moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
         //then
-        assertEquals(resultMarsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
-        assertEquals(resultMarsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
-        assertEquals(resultMarsRover.getDirection(),expectMarsRover.getDirection());
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
     }
     @Test
     public void should_get_MarsRover_xIs0_yIs0_directionIsE_when_given_MarsRover_xIs0_yIs0_directionIsN_listIsR() {
@@ -48,13 +48,83 @@ public class MoveMarsRoverTest {
         MarsRover expectMarsRover = new MarsRover(0,0,'E');
         MoveMarsRover moveMarsRover = new MoveMarsRover();
         List<Character> list= new ArrayList<>();
-        list.add('E');
+        list.add('R');
 
         //when
-        MarsRover resultMarsRover = moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
         //then
-        assertEquals(resultMarsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
-        assertEquals(resultMarsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
-        assertEquals(resultMarsRover.getDirection(),expectMarsRover.getDirection());
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
     }
+    @Test
+    public void should_get_MarsRover_xIs1_yIs0_directionIsE_when_given_MarsRover_xIs0_yIs0_directionIsE_listIsM() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,'E');
+        MarsRover expectMarsRover = new MarsRover(1,0,'E');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list= new ArrayList<>();
+        list.add('M');
+
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
+    @Test
+    public void should_get_MarsRover_xIs2_yIs0_directionIsE_when_given_MarsRover_xIs0_yIs0_directionIsN_listIsRRR() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,'N');
+        MarsRover expectMarsRover = new MarsRover(0,0,'W');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list= new ArrayList<>();
+        list.add('R');
+        list.add('R');
+        list.add('R');
+
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
+    @Test
+    public void should_get_MarsRover_xIs0_yIs1_directionIsN_when_given_MarsRover_xIs0_yIs0_directionIsN_listIsMM() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,'N');
+        MarsRover expectMarsRover = new MarsRover(0,2,'N');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list= new ArrayList<>();
+        list.add('M');
+        list.add('M');
+
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
+    @Test
+    public void should_get_MarsRover_xIs0_yIs1_directionIsN_when_given_MarsRover_xIs0_yIs0_directionIsN_listIsRMM() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,'N');
+        MarsRover expectMarsRover = new MarsRover(2,0,'E');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list= new ArrayList<>();
+        list.add('R');
+        list.add('M');
+        list.add('M');
+
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
+
 }
