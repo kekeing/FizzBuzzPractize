@@ -54,23 +54,25 @@ public class MoveMarsRover {
     }
 
     private void resultMarsRoverAccordCharacterM(MarsRover marsRover) {
-        if (marsRover.getDirection() == 'N'){
-            marsRover.setCoordinateY(marsRover.getCoordinateY() + 1);
+        if (Arrays.asList('N','S').contains(marsRover.getDirection())){
             marsRover.setCoordinateX(marsRover.getCoordinateX());
             marsRover.setDirection(marsRover.getDirection());
+            if (marsRover.getDirection() == 'N'){
+                marsRover.setCoordinateY(marsRover.getCoordinateY() + 1);
+            }
+            if (marsRover.getDirection() == 'S'){
+                marsRover.setCoordinateY(marsRover.getCoordinateY() - 1);
+            }
         }
-        if (marsRover.getDirection() == 'W'){
-            marsRover.setCoordinateX(marsRover.getCoordinateX() - 1);
+        if (Arrays.asList('W','E').contains(marsRover.getDirection())){
             marsRover.setCoordinateY(marsRover.getCoordinateY());
             marsRover.setDirection(marsRover.getDirection());
+            if (marsRover.getDirection() == 'W'){
+                marsRover.setCoordinateX(marsRover.getCoordinateX() - 1);
+            }
+            if (marsRover.getDirection() == 'E'){
+                marsRover.setCoordinateX(marsRover.getCoordinateX() + 1);
+            }
         }
-        if (marsRover.getDirection() == 'S'){
-            marsRover.setCoordinateY(marsRover.getCoordinateY() - 1);
-            marsRover.setCoordinateX(marsRover.getCoordinateX());
-            marsRover.setDirection(marsRover.getDirection());        }
-        if (marsRover.getDirection() == 'E'){
-            marsRover.setCoordinateX(marsRover.getCoordinateX() + 1);
-            marsRover.setCoordinateY(marsRover.getCoordinateY());
-            marsRover.setDirection(marsRover.getDirection());        }
     }
 }
