@@ -180,4 +180,22 @@ public class FizzBuzzTest {
         assertEquals(result, "Fizz");
     }
 
+    @Test
+    public void should_get_word_Fizz_when_given_173() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(173);
+        //then
+        assertEquals(result, "Fizz");
+    }
+    @Test
+    public void should_get_word_Fizz_when_given_53() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        //when
+        String result = fizzBuzz.getResult(53);
+        //then
+        assertEquals(result, "53");
+    }
 }
