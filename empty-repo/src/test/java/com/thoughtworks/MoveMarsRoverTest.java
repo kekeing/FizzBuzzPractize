@@ -158,5 +158,23 @@ public class MoveMarsRoverTest {
         assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
         assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
     }
+    @Test
+    public void should_get_MarsRover_xIs_negative5_yIs_negative5_directionIsS_when_given_MarsRover_xIs_negative5_yIs_negative5_directionIsS_listIsMRR() {
+        //given
+        MarsRover marsRover = new MarsRover(-5,-5,'S');
+        MarsRover expectMarsRover = new MarsRover(-5,-5,'S');
+        MoveMarsRover moveMarsRover = new MoveMarsRover();
+        List<Character> list= new ArrayList<>();
+        list.add('M');
+        list.add('R');
+        list.add('R');
+
+        //when
+        moveMarsRover.moveMarsRoverAccordOrders(marsRover,list);
+        //then
+        assertEquals(marsRover.getCoordinateX(),expectMarsRover.getCoordinateX());
+        assertEquals(marsRover.getCoordinateY(),expectMarsRover.getCoordinateY());
+        assertEquals(marsRover.getDirection(),expectMarsRover.getDirection());
+    }
 
 }
